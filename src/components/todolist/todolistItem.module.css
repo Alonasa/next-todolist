@@ -1,0 +1,11 @@
+.date {
+    font-size: 10px;
+    color: #7d9f9f;
+    position: absolute;
+    top: -25px;
+    right: 0;
+}
+
+.title {
+    position: relative;
+}
