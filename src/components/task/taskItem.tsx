@@ -18,7 +18,9 @@ type Props = {
     changeTaskTitle: (taskId: TaskProps["id"], title: string) => void
 }
 
-const TaskItem = ({task, deleteTask, changeStatus, changeTaskTitle}: Props) => {
+const TaskItem = ({
+                      task, deleteTask, changeStatus, changeTaskTitle
+                  }: Props) => {
     const {id, title, created, isDone} = task;
 
     const deleteTaskHandler = (taskId: TaskProps["id"]) => {
@@ -34,17 +36,15 @@ const TaskItem = ({task, deleteTask, changeStatus, changeTaskTitle}: Props) => {
     }
 
 
-
-    return (
-        <ListItem key={id} disablePadding={true}>
-            <Checkbox checked={isDone} onChange={() => changeStatusHandler(id, isDone)}>
-            </Checkbox>
-            <EditableSpan title={title} isDone={isDone} created={created} changeTitle={changeTitleHandler}></EditableSpan>
-            <IconButton sx={{ml: "auto"}} onClick={() => deleteTaskHandler(id)}>
-                <DeleteOutline/>
-            </IconButton>
-        </ListItem>
-    )
+    return (<ListItem key={id} disablePadding={true}>
+        <Checkbox checked={isDone} onChange={() => changeStatusHandler(id, isDone)}>
+        </Checkbox>
+        <EditableSpan title={title} isDone={isDone} created={created}
+                      changeTitle={changeTitleHandler}></EditableSpan>
+        <IconButton sx={{ml: "auto"}} onClick={() => deleteTaskHandler(id)}>
+            <DeleteOutline/>
+        </IconButton>
+    </ListItem>)
 }
 
 export default TaskItem;

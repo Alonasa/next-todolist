@@ -43,11 +43,15 @@ export default function () {
        setTasks({...tasks, [tlId]: tasks[tlId].map(t => t.id === taskId ? {...t, title} : t)})
     }
 
+    const changeTodolistTitle = (tlId: TodolistProps["id"], title: TaskProps["title"]) => {
+        setTodolists(todolists.map(tl=> tl.id === tlId ? {...tl, title} : tl));
+    }
+
 
     return (
         <>
             <Container maxWidth="lg" sx={{my: 3}}>
-                <AddItem title={"Add"} cb={addTodolist}/>
+                <AddItem cb={addTodolist}/>
                 <Box sx={{display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
                     {todolists.length ? todolists.map(tl => {
                         return (
@@ -59,6 +63,7 @@ export default function () {
                                           deleteTodolist={deleteTodolist}
                                           changeTaskStatus={changeTaskStatus}
                                           changeTaskTitle={changeTaskTitle}
+                                          changeTodolistTitle={changeTodolistTitle}
                             />
                         )
                     }) : <span>No todolists yet...</span>}

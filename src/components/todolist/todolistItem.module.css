@@ -1,13 +1,4 @@
-.date {
-    font-size: 10px;
-    color: #7d9f9f;
-    position: absolute;
-    top: -5px;
-    right: 0;
-}
-
 .title {
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     position: relative;
