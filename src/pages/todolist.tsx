@@ -1,10 +1,11 @@
 import {useState} from "react";
 import AddItem from "@/components/todolist/addItem/addItem";
-import TodolistItem, {TodolistProps} from "@/components/todolist/todolist/todolistItem";
-import {TaskProps} from "@/components/task/taskItem";
+
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import {v4} from "uuid";
+import TodolistItem, { TodolistProps } from "@/components/todolist/todolistItem/todolistItem";
+import { TaskProps } from "@/components/todolist/taskItem/taskItem";
 
 type TasksStateProps = { [key: TodolistProps["id"]]: TaskProps[] };
 export default function () {
@@ -72,8 +73,4 @@ export default function () {
         </>
 
     )
-}
-
-function v1() {
-    throw new Error("Function not implemented.");
 }
