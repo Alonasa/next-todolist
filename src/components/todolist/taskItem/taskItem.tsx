@@ -2,7 +2,7 @@ import ListItem from "@mui/material/ListItem";
 import IconButton from "@mui/material/IconButton";
 import DeleteOutline from "@mui/icons-material/DeleteOutline";
 import Checkbox from "@mui/material/Checkbox";
-import EditableSpan from "@/components/editableSpan/editableSpan";
+import EditableSpan from "@/components/todolist/editableSpan/editableSpan";
 
 export type TaskProps = {
     id: string,

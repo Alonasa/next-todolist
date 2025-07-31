@@ -1,6 +1,6 @@
 import {useState} from "react";
-import AddItem from "@/components/addItem/addItem";
-import TodolistItem, {TodolistProps} from "@/components/todolist/todolistItem";
+import AddItem from "@/components/todolist/addItem/addItem";
+import TodolistItem, {TodolistProps} from "@/components/todolist/todolist/todolistItem";
 import {TaskProps} from "@/components/task/taskItem";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";

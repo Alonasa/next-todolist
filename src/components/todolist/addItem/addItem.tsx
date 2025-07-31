@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import {useState} from "react";
 import Add from "@mui/icons-material/Add";
 import IconButton from "@mui/material/IconButton";
-import UniversalTextfield from "@/components/addItem/universalTextfield";
+import UniversalTextfield from "@/components/todolist/addItem/universalTextfield";
 
 
 type Props = {
