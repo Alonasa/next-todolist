@@ -1,10 +1,8 @@
 import ListItem from "@mui/material/ListItem";
 import IconButton from "@mui/material/IconButton";
 import DeleteOutline from "@mui/icons-material/DeleteOutline";
-import Box from "@mui/material/Box";
 import Checkbox from "@mui/material/Checkbox";
-import s from "./taskItem.module.css";
-import formatDate from "@/utils/formatDate";
+import EditableSpan from "@/components/editableSpan/editableSpan";
 
 export type TaskProps = {
     id: string,
@@ -15,20 +13,34 @@ export type TaskProps = {
 
 type Props = {
     task: TaskProps
+    deleteTask: (taskId: TaskProps["id"]) => void
+    changeStatus: (taskId: TaskProps["id"], isDone: TaskProps["isDone"]) => void
+    changeTaskTitle: (taskId: TaskProps["id"], title: string) => void
 }
 
-const TaskItem = ({task}: Props) => {
-   const {id, title, created, isDone} = task;
+const TaskItem = ({task, deleteTask, changeStatus, changeTaskTitle}: Props) => {
+    const {id, title, created, isDone} = task;
+
+    const deleteTaskHandler = (taskId: TaskProps["id"]) => {
+        deleteTask(taskId);
+    }
+
+    const changeStatusHandler = (taskId: TaskProps["id"], isDone: TaskProps["isDone"]) => {
+        changeStatus(taskId, !isDone);
+    }
+
+    const changeTitleHandler = (title: string) => {
+        changeTaskTitle(id, title);
+    }
+
+
 
     return (
         <ListItem key={id} disablePadding={true}>
-            <Checkbox checked={isDone}>
+            <Checkbox checked={isDone} onChange={() => changeStatusHandler(id, isDone)}>
             </Checkbox>
-            <Box sx={{display: "flex", flexDirection: "column"}}>
-                <span>{title}</span>
-                <span className={s.date}>Added: {formatDate(created)}</span>
-            </Box>
-            <IconButton sx={{ml: "auto"}}>
+            <EditableSpan title={title} isDone={isDone} created={created} changeTitle={changeTitleHandler}></EditableSpan>
+            <IconButton sx={{ml: "auto"}} onClick={() => deleteTaskHandler(id)}>
                 <DeleteOutline/>
             </IconButton>
         </ListItem>

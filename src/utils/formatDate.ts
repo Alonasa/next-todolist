@@ -1,6 +1,6 @@
 const formatDate = (oldDate: number):string => {
     const date = new Date(oldDate);
-    const pad = (num) => (num < 10 ? '0' + num : num);
+    const pad = (num:number) => (num < 10 ? '0' + num : num);
 
     const year = date.getFullYear();
     const month = pad(date.getMonth() + 1);
