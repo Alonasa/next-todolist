@@ -1,9 +1,9 @@
 import Card from "@mui/material/Card";
 import List from "@mui/material/List";
 import {CardContent} from "@mui/material";
-import AddItem from "@/components/addItem/addItem";
+import AddItem from "@/components/todolist/addItem/addItem";
 import TaskItem, {TaskProps} from "@/components/task/taskItem";
-import EditableSpan from "@/components/editableSpan/editableSpan";
+import EditableSpan from "@/components/todolist/editableSpan/editableSpan";
 import IconButton from "@mui/material/IconButton";
 import DeleteOutline from "@mui/icons-material/DeleteOutline";
 import s from "./todolistItem.module.css";

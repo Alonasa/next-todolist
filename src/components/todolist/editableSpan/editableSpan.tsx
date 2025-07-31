@@ -2,7 +2,7 @@ import formatDate from "@/utils/formatDate";
 import s from "./editableSpan.module.css";
 import {useState} from "react";
 import Box from "@mui/material/Box";
-import UniversalTextfield from "../addItem/universalTextfield";
+import UniversalTextfield from "@/components/todolist/addItem/universalTextfield";
 
 type Props = {
     title: string,
